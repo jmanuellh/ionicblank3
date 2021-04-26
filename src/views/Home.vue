@@ -14,6 +14,24 @@
       </ion-header>
     
       <div id="container">
+        <div>
+          <!-- Default -->
+          <ion-button>Default</ion-button>
+
+          <!-- Anchor -->
+          <ion-button href="#">Anchor</ion-button>
+
+          <!-- Colors -->
+          <ion-button color="primary">Primary</ion-button>
+          <ion-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+          <ion-button color="secondary">Secondary</ion-button>
+          <ion-button>
+            <ion-icon slot="start" name="star"></ion-icon>
+            Left Icon
+          </ion-button>
+        </div>
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
@@ -22,8 +40,18 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/vue';
+import { addIcons } from "ionicons";
+import { star, add } from 'ionicons/icons';
+
+addIcons({
+  // "ios-map": map.ios,
+  // "md-map": map.md,
+  // "md-star": star.md,
+  star,
+  add
+});
 
 export default defineComponent({
   name: 'Home',
@@ -32,7 +60,9 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonButton,
+    IonIcon
   }
 });
 </script>
